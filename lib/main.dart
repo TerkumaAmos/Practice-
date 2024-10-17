@@ -31,20 +31,17 @@ class _QuizPageState extends State<QuizPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-         Expanded(
+        const Expanded(
           flex: 5,
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
-              child: Container(
-                decoration:BoxDecoration(color: Colors.red),
-                child: Text(
-                  'This is where the question text will go.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 25.0,
-                    color: Colors.black,
-                  ),
+              child: Text(
+                'This is where the question text will go.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25.0,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -54,9 +51,9 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor:Colors.green,
-                ),
-
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
               child: const Text(
                 'True',
                 style: TextStyle(
@@ -74,8 +71,9 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: const EdgeInsets.all(15.0),
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red,),
-
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
               child: const Text(
                 'False',
                 style: TextStyle(
