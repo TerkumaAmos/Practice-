@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(Quizzler());
+void main() {
+  runApp(Quizzler());
+}
 
 class Quizzler extends StatelessWidget {
+  const Quizzler({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.grey,
         body: SafeArea(
@@ -20,6 +24,8 @@ class Quizzler extends StatelessWidget {
 }
 
 class QuizPage extends StatefulWidget {
+  const QuizPage({super.key});
+
   @override
   _QuizPageState createState() => _QuizPageState();
 }
@@ -38,9 +44,9 @@ class _QuizPageState extends State<QuizPage> {
             child: Center(
               child: Text(
                 'This is where the question text will go.',
-                textAlign: TextAlign.center,
+                //  textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 30.0,
                   color: Colors.black,
                 ),
               ),
@@ -58,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
                 'True',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20.0,
+                  fontSize: 10.0,
                 ),
               ),
               onPressed: () {
