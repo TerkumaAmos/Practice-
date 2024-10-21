@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() {
+  // My name is Agber Terkuma Amos
   runApp(Quizzler());
 }
 
@@ -11,10 +15,10 @@ class Quizzler extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: QuizPage(),
           ),
         ),
@@ -31,23 +35,45 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
+  List<Icon> scoreKeeper = [];
+
+  // List<String> questions = [
+  //   'My name is Agber Terkuma Amos',
+  //   'I school at Landmark university',
+  //   'I\'m a girl',
+  // ];
+  // List<bool> answers = [
+  //   true,
+  //   true,
+  //   false,
+  // ];
+  // Question q1 = Question(q: 'My name is Agber Terkuma Amos', a: true);
+  List<Question> questionBank = [
+    Question(q: 'My name is Agber Terkuma Amos', a: true),
+    Question(q: 'I school at Landmark university', a: true),
+    Question(q: 'I\'m a girl', a: false),
+  ];
+
+  int questionNumber = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        const Expanded(
+        Expanded(
           flex: 5,
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                'This is where the question text will go.',
+                questionBank[questionNumber].q,
+                //  'This is where the question text will go.',
                 //  textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -68,6 +94,18 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = questionBank[questionNumber].a;
+
+                if (correctAnswer == true) {
+                  print("User got it right");
+                } else {
+                  print("Wrong answer");
+                }
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+
                 //The user picked true.
               },
             ),
@@ -88,12 +126,26 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnswer = questionBank[questionNumber].a;
+
+                if (correctAnswer == false) {
+                  print("User got it right");
+                } else {
+                  print("Wrong answer");
+                }
+                setState(() {
+                  questionNumber++;
+                  print(questionNumber);
+                });
+
                 //The user picked false.
               },
             ),
           ),
         ),
-        //TODO: Add a Row here as your score keeper
+        Row(
+          children: scoreKeeper,
+        ),
       ],
     );
   }
