@@ -9,7 +9,7 @@
 // }
 
 class Question {
-  late final bool a;
+  late final bool a   ;
   late final String q;
 
   Question({required this.a, required this.q});

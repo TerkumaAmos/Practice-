@@ -57,6 +57,7 @@ class _QuizPageState extends State<QuizPage> {
     Question(q: 'I have a girlfriend', a: false),
     Question(q: 'I am a mobile developer', a: true),
     Question(q: 'I live in the trenches of maiduguri', a: true),
+    Question(q: 'Hey how are you doing', a: true),
     Question(q: 'I am 20', a: true),
   ];
 
@@ -69,7 +70,7 @@ class _QuizPageState extends State<QuizPage> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Expanded(
-          flex: 5,
+          flex: 6,
           child: Padding(
             padding: EdgeInsets.all(10.0),
             child: Center(
