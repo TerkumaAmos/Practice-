@@ -14,6 +14,7 @@ class Quizzler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SafeArea(
@@ -52,6 +53,11 @@ class _QuizPageState extends State<QuizPage> {
     Question(q: 'My name is Agber Terkuma Amos', a: true),
     Question(q: 'I school at Landmark university', a: true),
     Question(q: 'I\'m a girl', a: false),
+    Question(q: 'I school at ABUAD university', a: false),
+    Question(q: 'I have a girlfriend', a: false),
+    Question(q: 'I am a mobile developer', a: true),
+    Question(q: 'I live in the trenches of maiduguri', a: true),
+    Question(q: 'I am 20', a: true),
   ];
 
   int questionNumber = 0;
@@ -90,7 +96,7 @@ class _QuizPageState extends State<QuizPage> {
                 'True',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 10.0,
+                  fontSize: 50,
                 ),
               ),
               onPressed: () {
@@ -121,7 +127,7 @@ class _QuizPageState extends State<QuizPage> {
               child: const Text(
                 'False',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 50,
                   color: Colors.white,
                 ),
               ),
