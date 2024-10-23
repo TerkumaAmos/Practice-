@@ -11,10 +11,13 @@
 class Question {
   late final bool a;
   late final String q;
-  late String questionText;
-  late bool questionAnswer;
+  // late String questionText;
+  // late bool questionAnswer;
 
-  Question({required this.a, required this.q});
+  Question({
+    required this.a,
+    required this.q,
+  });
 }
 
 

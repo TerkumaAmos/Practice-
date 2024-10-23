@@ -3,7 +3,7 @@ import 'package:practice1/question.dart';
 import 'question.dart';
 
 class QuizBrain {
-  List<Question> _questionBank = [
+  final List<Question> _questionBank = [
     Question(q: 'My name is Agber Terkuma Amos', a: true),
     Question(q: 'I school at Landmark university', a: true),
     Question(q: 'I\'m a girl', a: false),
@@ -16,10 +16,10 @@ class QuizBrain {
   ];
 
   String getQuestionText(int questionNumber) {
-    return _questionBank[questionNumber].questionText;
+    return _questionBank[questionNumber].q;
   }
 
   bool getCorrectAnswer(int questionNumber) {
-    return _questionBank[questionNumber].questionAnswer;
+    return _questionBank[questionNumber].a;
   }
 }
