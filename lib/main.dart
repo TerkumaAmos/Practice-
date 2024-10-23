@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'question.dart';
+//import 'question.dart';
+import 'quiz_brain.dart';
+
+QuizBrain quizBrain = QuizBrain();
 
 void main() {
   // My name is Agber Terkuma Amos
@@ -49,17 +52,6 @@ class _QuizPageState extends State<QuizPage> {
   //   false,
   // ];
   // Question q1 = Question(q: 'My name is Agber Terkuma Amos', a: true);
-  List<Question> questionBank = [
-    Question(q: 'My name is Agber Terkuma Amos', a: true),
-    Question(q: 'I school at Landmark university', a: true),
-    Question(q: 'I\'m a girl', a: false),
-    Question(q: 'I school at ABUAD university', a: false),
-    Question(q: 'I have a girlfriend', a: false),
-    Question(q: 'I am a mobile developer', a: true),
-    Question(q: 'I live in the trenches of maiduguri', a: true),
-    Question(q: 'Hey how are you doing', a: true),
-    Question(q: 'I am 20', a: true),
-  ];
 
   int questionNumber = 0;
 
@@ -75,9 +67,9 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questionBank[questionNumber].q,
+                quizBrain.getQuestionText(questionNumber),
                 //  'This is where the question text will go.',
-                //  textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 10.0,
                   color: Colors.white,
@@ -101,7 +93,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = questionBank[questionNumber].a;
+                bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
 
                 if (correctAnswer == true) {
                   print("User got it right");
@@ -133,7 +125,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer = questionBank[questionNumber].a;
+                bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
 
                 if (correctAnswer == false) {
                   print("User got it right");
