@@ -79,7 +79,7 @@ class _QuizPageState extends State<QuizPage> {
                 //  'This is where the question text will go.',
                 //  textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 10.0,
                   color: Colors.white,
                 ),
               ),
