@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 //import 'question.dart';
 import 'quiz_brain.dart';
+import 'dart:developer';
 
 QuizBrain quizBrain = QuizBrain();
 
@@ -71,7 +72,7 @@ class _QuizPageState extends State<QuizPage> {
                 //  'This is where the question text will go.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 10.0,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
@@ -96,13 +97,13 @@ class _QuizPageState extends State<QuizPage> {
                 bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
 
                 if (correctAnswer == true) {
-                  print("User got it right");
+                  log("User got it right");
                 } else {
-                  print("Wrong answer");
+                  log("Wrong answer");
                 }
                 setState(() {
                   questionNumber++;
-                  print(questionNumber);
+                  log(questionNumber.toString());
                 });
 
                 //The user picked true.
@@ -128,13 +129,13 @@ class _QuizPageState extends State<QuizPage> {
                 bool correctAnswer = quizBrain.getCorrectAnswer(questionNumber);
 
                 if (correctAnswer == false) {
-                  print("User got it right");
+                  log("User got it right");
                 } else {
-                  print("Wrong answer");
+                  log("Wrong answer");
                 }
                 setState(() {
                   questionNumber++;
-                  print(questionNumber);
+                  log(questionNumber.toString());
                 });
 
                 //The user picked false.
