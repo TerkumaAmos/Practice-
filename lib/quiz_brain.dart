@@ -13,6 +13,7 @@ class QuizBrain {
     Question(q: 'I live in the trenches of maiduguri', a: true),
     Question(q: 'Hey how are you doing', a: true),
     Question(q: 'I am 20', a: true),
+    Question(q: 'Hi i love you ', a: false)
   ];
 
   String getQuestionText(int questionNumber) {
