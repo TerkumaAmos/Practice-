@@ -2,6 +2,8 @@
 
 import 'question.dart';
 
+int _questionNumber = 0;
+
 class QuizBrain {
   final List<Question> _questionBank = [
     Question(q: 'My name is Agber Terkuma Amos', a: true),
@@ -15,6 +17,11 @@ class QuizBrain {
     Question(q: 'I am 20', a: true),
     Question(q: 'Hi i love you ', a: false)
   ];
+  void nextQuestion() {
+    if (_questionNumber < _questionBank.length) {
+      _questionNumber++;
+    }
+  }
 
   String getQuestionText(int questionNumber) {
     return _questionBank[questionNumber].q;
