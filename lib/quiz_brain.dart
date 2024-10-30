@@ -18,7 +18,7 @@ class QuizBrain {
     Question(q: 'Hi i love you ', a: false)
   ];
   void nextQuestion() {
-    if (_questionNumber < _questionBank.length) {
+    if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     }
   }
